@@ -1,6 +1,4 @@
-# Team9
-# Analytics using ML on distributed systems 
-# Category: AI in Software Development - Approved
+# Analysing Microservices Performance In Cloud using Machine Learning
 Idea#1: Introduction to the problem statement: Use AI to measure and improve Microservice performance
 
 Microservices architecture is a common way to deploy containerized software in the cloud. However, as the number of microservices increases, the management complexity also increases which is due to distributed architecture. Also, Network latency and load balancing are other challenges.

@@ -6,7 +6,7 @@
 * Saumil Shah
 * Shravan Vallaban
 ## Project Summary
-** Use AI to measure and improve Microservice performance**
+
 >Introduction to the problem statement
 >>Microservices architecture is a common way to deploy containerized software in the cloud. However, as the number of microservices increases, the management complexity also increases which is due to distributed architecture. Also, Network latency and load balancing are other challenges.
 

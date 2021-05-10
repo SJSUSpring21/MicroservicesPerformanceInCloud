@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices-k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: microservices-k8s
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: microservices-k8s
+    spec:
+      containers:
+      - name: microservices-k8s
+        image: akashkuratkar/team9-project
+        ports:
+        - containerPort: 8080

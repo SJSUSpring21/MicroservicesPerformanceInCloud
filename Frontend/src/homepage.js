@@ -1,19 +1,20 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { Grid,Segment } from 'semantic-ui-react'
 import Logo from './cib-amazon-aws.svg';
 import Logo1 from './cib-google-cloud.svg';
+import Tableau from "./tableau";
 
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -35,13 +36,13 @@ const useStyles = makeStyles((theme) => ({
 const data = [
   {
     name: 'Page A',
-    
+
     second: 2400,
     amt: 2400,
   },
   {
     name: 'Page B',
-    
+
     second: 1398,
     amt: 2210,
   },
@@ -79,130 +80,159 @@ const data = [
 
 export default function Home() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [service, setService] = React.useState("");
+  const [clusters, setClusters] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setService(event.target.value);
   };
-  const service = () => {
-    console.log(age)
-    if(age === 10){
-      console.log("light")
-    }
-    else if(age === 20){
-      console.log("Medium")
-    }
-    else if(age === 30){
-      console.log("Heavy")
+  const Services = () => {
+    console.log(service);
+    if (service === 10) {
+      console.log("light");
+    } else if (service === 20) {
+      console.log("Medium");
+    } else if (service === 30) {
+      console.log("Heavy");
     }
   };
 
   return (
-<div>   
- <div className={classes.root}>
- 
-    <AppBar position="static">
-   
-      <Toolbar variant="dense">
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-         
-        </IconButton>
-   
-        <Typography variant="h6" color="inherit">
-          Test
-        </Typography>
-      </Toolbar>
-    </AppBar>
-  </div>
     <div>
-    <br/>
-   
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-helper-label">Select Service</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Light</MenuItem>
-          <MenuItem value={20}>Medium</MenuItem>
-          <MenuItem value={30}>Heavy</MenuItem>
-        </Select>
-        <FormHelperText>Some important helper text</FormHelperText>
-      </FormControl>
-     
-    </div>
-    <Button variant="contained" onClick={service}>Submit</Button>
-    <br/>
-    <br/>
-    <h1>Graphs</h1>
-    <div>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar variant="dense">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            ></IconButton>
 
-    <Grid stackable columns={2}>
-    <Grid.Column>
-    <Segment>
-      <LineChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line
-        type="monotone"
-        dataKey="first"
-        stroke="#8884d8"
-        activeDot={{ r: 8 }}
-      />
-      <Line type="monotone" dataKey="second" stroke="#82ca9d" />
-    </LineChart>
-    </Segment>
-    <img src={Logo}/><h3>Amazon Web Services</h3>
-    </Grid.Column>
-    <Grid.Column>
-    <Segment>
-      <LineChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line
-        type="monotone"
-        dataKey="pv"
-        stroke="#8884d8"
-        activeDot={{ r: 8 }}
-      />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-    </LineChart>
-    </Segment>
-    <img src={Logo1}/><h3>Google Cloud Platform</h3>
-    </Grid.Column>
-   </Grid>
-    </div>
+            <Typography variant="h6" color="inherit">
+              Test
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </div>
+      <div>
+        <br />
+
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-helper-label">
+            Select Service
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={service}
+            onChange={handleChange}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={10}>Light</MenuItem>
+            <MenuItem value={20}>Medium</MenuItem>
+            <MenuItem value={30}>Heavy</MenuItem>
+          </Select>
+          <FormHelperText>Some important helper text</FormHelperText>
+
+          
+
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-helper-label">
+            Select Clusters
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={clusters}
+            onChange={handleChange}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>3</MenuItem>
+            <MenuItem value={3}>5</MenuItem>
+          </Select>
+          <FormHelperText>Some important helper text</FormHelperText>
+        </FormControl>
+      </div>
+      <Button variant="contained" onClick={Services}>
+        Submit
+      </Button>
+      <br />
+      <br />
+      <h1>Metrics</h1>
+      <div>
+        <div>
+          <Tableau />
+        </div>
+        
+            <Grid stackable columns={2}>
+            <Grid.Column>
+            <Segment>
+              <LineChart
+              width={500}
+              height={300}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="first"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+              <Line type="monotone" dataKey="second" stroke="#82ca9d" />
+            </LineChart>
+            </Segment>
+            <img src={Logo}/><h3>Amazon Web Services</h3>
+            </Grid.Column>
+            <Grid.Column>
+            <Segment>
+              <LineChart
+              width={500}
+              height={300}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="pv"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+              <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            </LineChart>
+            </Segment>
+            <img src={Logo1}/><h3>Google Cloud Platform</h3>
+            </Grid.Column>
+           </Grid>
+        
+      </div>
     </div>
   );
 }

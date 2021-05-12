@@ -1,0 +1,36 @@
+.ct-label.ct-label.ct-horizontal.ct-end {
+    position: relative;
+    justify-content: flex-end;
+    text-align: right;
+    transform-origin: 100% 0;
+    transform: translate(-100%) rotate(-35deg);
+    white-space:nowrap;
+  }
+
+  .card-color-danger{
+    background: linear-gradient(
+      60deg
+      , #ef5350, #e53935) !important;
+          box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(244 67 54 / 40%);
+  }
+  
+  .card-color-success{
+    background: linear-gradient(
+60deg
+, #66bb6a, #43a047) !important;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(76 175 80 / 40%);
+  }
+
+  .card-color-warning{
+    background: linear-gradient(
+      60deg
+      , #ffa726, #fb8c00)!important;
+          box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(255 152 0 / 40%);
+  }
+
+  .logo-win{
+    top: 20%;
+    left: 54%;
+    position: fixed;
+  }
+  

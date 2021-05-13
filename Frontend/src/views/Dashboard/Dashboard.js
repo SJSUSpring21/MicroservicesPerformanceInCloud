@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   const getWinData = () => {
     let rand = Math.floor(Math.random() * 4);
-    const labels = ["12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM"];
+    const labels = [];
     const series = [winnerArr[rand]];
     return { labels, series: series };
   }
@@ -86,7 +86,7 @@ export default function Dashboard() {
       const data = response.data;
       const pref = data.platform.Preferred;
       const other = data.platform.Other;
-      const labels = ["12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM"];
+      const labels = ["3 May", "4 May", "5 May", "6 May", "7 May", "8 May", "9 May", "10 May"];
 
       if (pref.Service === "Google Cloud Platform") {
         let series = [pref.array];

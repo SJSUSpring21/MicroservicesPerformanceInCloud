@@ -22,6 +22,7 @@ const dailySalesChart = {
       bottom: 0,
       left: 0,
     },
+    title:"Test"
   },
   // for animation
   animation: {

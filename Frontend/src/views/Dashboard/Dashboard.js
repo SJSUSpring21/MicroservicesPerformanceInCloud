@@ -81,7 +81,7 @@ export default function Dashboard() {
   }
 
   const handleSubmit = async (e) => {
-    const response = await axios.get(`http://35.197.12.244/chooseCloudPlatform/${selectedType}/${selectedCluster}`)
+    const response = await axios.get(`http://35.237.221.117/chooseCloudPlatform/${selectedType}/${selectedCluster}`)
     if (response) {
       const data = response.data;
       const pref = data.platform.Preferred;
